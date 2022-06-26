@@ -1,0 +1,11 @@
+@import "../../scss/variables";
+.newUser{
+
+    background-color: $BgCard-color;
+    padding:1rem;
+    border-radius: 9px;
+
+    h5{
+        color:$Btn-color;
+    }
+}
