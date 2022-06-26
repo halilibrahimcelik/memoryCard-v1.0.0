@@ -11,6 +11,7 @@ const Register = (props) => {
         setName("");
         setAge("");
 
+
         const newUser={
             userName:initialName.toUpperCase(),
             userAge:initialAge,
@@ -20,6 +21,7 @@ const Register = (props) => {
 
     }
 const nameHandler=(e)=>{
+
 setName(e.target.value);
 }
 const ageHandler=(e)=>{
@@ -29,6 +31,8 @@ setAge(e.target.value);
 }
 
   return (
+
+ 
     <div>
         <form className={styles["form-box"]} action="" onSubmit={registerUserHandler}>
 
