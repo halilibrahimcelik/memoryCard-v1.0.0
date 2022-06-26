@@ -1,8 +1,13 @@
 import "./scss/App.scss";
+import Register from "./components/register/Register";
+import Card from "./components/card/Card";
 function App() {
   return (
     <>
-      <h1>APP</h1>
+      <div className="container">
+        <Register />
+        <Card />
+      </div>
     </>
   );
 }
