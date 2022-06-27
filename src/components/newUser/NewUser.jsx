@@ -14,9 +14,9 @@ const NewUser = (props) => {
   return (
     <div className={styles.newUser} >
 
-        <h5><FontAwesomeIcon icon={faImagePortrait} />  {name}</h5>
-        <p><FontAwesomeIcon icon={faCalendar} />  {age} </p>
-        <p> <FontAwesomeIcon icon={faUserDoctor} />  {occupation} </p>
+        <h5><FontAwesomeIcon icon={faImagePortrait} /> UserName: {name}</h5>
+        <p><FontAwesomeIcon icon={faCalendar} />Age:  {age} </p>
+        <p> <FontAwesomeIcon icon={faUserDoctor} /> Occupation: {occupation} </p>
         <p><FontAwesomeIcon icon={faEnvelope} /> {email} </p>
         <button onClick={removeDataHandler}>Delete</button>
     </div>
