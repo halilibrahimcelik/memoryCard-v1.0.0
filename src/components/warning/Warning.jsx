@@ -2,13 +2,13 @@ import React from 'react';
 import styles from  "./warning.module.scss"
 
 const Warning = (props) => {
-const {onCancel}=props;
+const {onCancel,title,text}=props;
 
   return (
     <div onClick={onCancel} className={styles["warning-container"]}>
       <div className={styles.warning}>
-        <h2>Invalid input</h2>
-      <p>Please enter a valid information</p>
+        <h2>{title}</h2>
+      <p>{text}</p>
         <button onClick={onCancel}>Okay</button>
       </div>
     </div>

@@ -2,10 +2,34 @@
 .newUser{
 
     background-color: $BgCard-color;
+    display: flex;
+    flex-direction: column;
     padding:1rem;
     border-radius: 9px;
+    gap:0.2rem;
+    transition: all 1s ease;
 
     h5{
         color:$Btn-color;
+        font-weight: 800;
     }
+    p{
+        font-weight: 600;
+    }
+    button{
+        width: max-content;
+        align-self: flex-end;
+        padding: 0.5rem 0.9rem;
+        opacity: 1;
+        outline: none;
+        border: none;
+        border-radius: 9px;
+        background-color:$BgWarning-color;
+        color:white;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        &:hover{
+            opacity: 0.8;
+        }
+     }
 }

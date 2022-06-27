@@ -1,14 +1,20 @@
 import React from 'react'
 import styles from "./newUser.module.scss"
 const NewUser = (props) => {
-    const {name,age}=props;
-    console.log(name,age);
+    const {name,age,onRemoveHandler,index}=props;
+
+
+    const removeDataHandler=()=>{
+      
+ onRemoveHandler(index)
+    }
 
   return (
-    <div className={styles.newUser}>
+    <div className={styles.newUser} >
 
-        <h5>Username:{name}</h5>
-        <p>{age}</p>
+        <h5>UserName: {name}</h5>
+        <p>Age: {age} </p>
+        <button onClick={removeDataHandler}>Delete</button>
     </div>
   )
 }
