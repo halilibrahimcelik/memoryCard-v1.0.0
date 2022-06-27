@@ -20,7 +20,7 @@ const Register = (props) => {
         setJob("");
 
         //!validation
-        if(initialName.trim().length===0 || initialAge.trim().length===0){
+        if(initialName.trim().length===0 || initialAge.trim().length===0 || initialMail.trim().length===0 || initialJob.trim().length===0){
             setError({
                 title:"Invalid Input",
                 text:"Please enter a valid input"

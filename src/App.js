@@ -1,10 +1,23 @@
 import "./scss/App.scss";
 import Register from "./components/register/Register";
 import Card from "./components/card/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [initialCard, setNewCard] = useState([]);
+
+  //!localStorage
+
+  useEffect(() => {
+    const localData = localStorage.getItem("Cards");
+    if (localData) {
+      setNewCard(JSON.parse(localData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("Cards", JSON.stringify(initialCard));
+  }, [initialCard]);
 
   const addNewUserCardHandler = (newCard) => {
     setNewCard((prevCards) => {
@@ -20,6 +33,7 @@ function App() {
 
   return (
     <>
+      <h1 className="header">MEMORY-CARD</h1>
       <div className="container">
         <Register onNewCardData={addNewUserCardHandler} />
 

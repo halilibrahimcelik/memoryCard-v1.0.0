@@ -4,3 +4,11 @@ body{
 background-color: $Bg-color;
 position: relative;
 }
+.header  {
+    color:$BgWarning-color;
+    text-align: center;
+    font-weight: 900;
+    font-size: 3rem;
+    margin:2rem;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.4);
+}
