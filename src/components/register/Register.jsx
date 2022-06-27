@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import styles from "./register.module.scss"
-
+import Warning from '../warning/Warning';
+import Card from '../card/Card';
 const Register = (props) => {
     const {onNewCardData}=props;
     const [initialName, setName]=useState("");
     const [initialAge, setAge]=useState("");
+    const [isVisible,setVisibility]=useState(false);
+
     const registerUserHandler=(e)=>{
         e.preventDefault();
         
@@ -20,20 +23,29 @@ const Register = (props) => {
         onNewCardData(newUser);
 
     }
-const nameHandler=(e)=>{
-
-setName(e.target.value);
+    
+    const nameHandler=(e)=>{
+        
+        setName(e.target.value);
+    }
+    const ageHandler=(e)=>{
+        
+        setAge(e.target.value);
+        
+    }
+    const onToggleHandler=()=>{
+    if(initialName==="" || initialAge===""){
+    setVisibility(true)
+    }
 }
-const ageHandler=(e)=>{
-  
-setAge(e.target.value);
-
+const onCancelHandler=()=>{
+    setVisibility(false)
 }
 
-  return (
+return (
 
- 
-    <div>
+      
+      <div>
         <form className={styles["form-box"]} action="" onSubmit={registerUserHandler}>
 
             <label >Username
@@ -43,9 +55,13 @@ setAge(e.target.value);
             </label>
             <input type="number"  value={initialAge}  onChange={ageHandler} />
 
-            <button>Add User</button>
+            <button   onClick={onToggleHandler}>Add User</button>
         </form>
 
+       {isVisible?
+           <Warning onCancel={onCancelHandler} />
+                     
+     :null}
     </div>
   )
 }
