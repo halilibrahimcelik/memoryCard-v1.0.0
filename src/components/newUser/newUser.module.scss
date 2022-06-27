@@ -4,6 +4,8 @@
     background-color: $BgCard-color;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-right;
     padding:1rem;
     border-radius: 9px;
     gap:0.2rem;

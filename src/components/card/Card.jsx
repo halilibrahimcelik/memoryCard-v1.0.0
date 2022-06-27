@@ -5,7 +5,7 @@ import styles from "./card.module.scss"
 const Card = (props) => {
     const {cardData,onRemoveData}=props;
 
-
+console.log(cardData)
 
   
   return (
@@ -19,7 +19,7 @@ const Card = (props) => {
    
 
 {   cardData.map((card,index)=>{
-      return( ( card.userName==="" || card.userAge==="")? null: <NewUser onRemoveHandler={onRemoveData}  name={card.userName} age={card.userAge}  index={index} key={card.id} /> )
+      return( ( card.userName==="" || card.userAge===""||card.userMail===""||card.userJob==="")? null: <NewUser onRemoveHandler={onRemoveData} occupation={card.userJob} email={card.userMail}  name={card.userName} age={card.userAge}  index={index} key={card.id} /> )
      })}
      
 

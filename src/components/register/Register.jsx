@@ -38,6 +38,8 @@ const Register = (props) => {
         }
         const newUser={
             userName:initialName.toUpperCase(),
+            userJob:initialJob,
+            userMail:initialMail,
             userAge:initialAge,
             id:Math.random().toString()
         }
