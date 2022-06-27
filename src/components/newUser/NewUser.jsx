@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from "./newUser.module.scss"
 const NewUser = (props) => {
-    const {name,age}=props
+    const {name,age}=props;
+    console.log(name,age);
+
   return (
     <div className={styles.newUser}>
 

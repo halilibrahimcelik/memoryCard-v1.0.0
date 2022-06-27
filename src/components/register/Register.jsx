@@ -14,6 +14,10 @@ const Register = (props) => {
         setName("");
         setAge("");
 
+        //!validation
+        if(initialName.trim().length===0 || initialAge.trim().length===0){
+            return;
+        }
 
         const newUser={
             userName:initialName.toUpperCase(),
@@ -48,12 +52,12 @@ return (
       <div>
         <form className={styles["form-box"]} action="" onSubmit={registerUserHandler}>
 
-            <label >Username
+            <label htmlFor='username' >Username
             </label>
-            <input  value={initialName} type="text"  onChange={nameHandler} />
-            <label >Age(Years)
-            </label>
-            <input type="number"  value={initialAge}  onChange={ageHandler} />
+            <input  value={initialName} id="username" type="text"  onChange={nameHandler} />
+            <label  htmlFor='age' >Age(Years)
+            </label >
+            <input type="number"  id='age' value={initialAge}  onChange={ageHandler} />
 
             <button   onClick={onToggleHandler}>Add User</button>
         </form>
